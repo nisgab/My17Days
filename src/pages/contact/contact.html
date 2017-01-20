@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      מה אפשר לאכול
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <p>
+    Hello {{userData.name}}
+  </p>
+  <input type ="text" [(ngModel)]="foodToSearch" />
+  <ul>
+    <li *ngFor= "let food of (foodList | isValidFood: foodToSearch:userData.currentCycle)">
+      {{food.name}}
+    </li>
+  </ul>
+</ion-content>
